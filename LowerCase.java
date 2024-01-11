@@ -11,7 +11,23 @@ public class LowerCase {
     * Non-letter characters are left as is.
     */
     public static String lowerCase(String s) {
-        // Replace the following statement with your code
-        return null;
+        String new_str = "";
+        int str_len = s.length();
+
+        for (int i = 0; i < str_len; i++){
+            // int asciiValue = (int) s.charAt(i);
+
+            // checks if chr between A and Z and change accordingly
+            char cur_chr = s.charAt(i);
+            if (cur_chr <= 'Z' && 'A' <= cur_chr){
+                char smallLetter = Character.toLowerCase(s.charAt(i));
+                new_str += smallLetter;
+            }
+            else{
+                new_str += s.charAt(i);
+            }
+        }
+
+        return new_str;
     }
 }

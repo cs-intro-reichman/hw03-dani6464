@@ -11,7 +11,25 @@ public class UniqueChars {
      * unless they are space characters.
      */
     public static String uniqueChars(String s) {
-        // Replace the following statement with your code
-        return null;
+        String new_str = "";
+        int str_len = s.length();
+
+        // loop through each chr in string
+        for (int i = 0; i < str_len; i++){
+            boolean isDuplicate = false;
+            // check for duplicate chrs
+            for (int j = 0; j < i; j++){
+                if (s.charAt(i) == s.charAt(j) && s.charAt(i) != ' '){
+                    isDuplicate = true;
+                    break;
+                }
+            }
+            // add the chr if it's not duplicate
+            if (!isDuplicate){
+                new_str += s.charAt(i);
+            }
+        }
+
+        return new_str;
     }
 }
